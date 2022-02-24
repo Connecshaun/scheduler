@@ -5,7 +5,9 @@ import "components/Appointment/styles.scss";
 export default function Appointment (props) {
 
   if (!props.time) {
-    return "No Appointments"}
+    return (
+      <article className="appointment" >No Appointment</article>
+    )}
       else {
 
   return (
