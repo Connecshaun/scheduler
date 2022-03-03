@@ -22,3 +22,13 @@ export function getInterview(state, interview) {
     }
   )
 }
+
+// Create a function called getInterviewersForDay that will receive two arguments state and day. The function will return an array of interviewers for the given day.
+export function getInterviewersForDay(state, day) {
+
+  const filteredByDay = state.days.find(givenDay => givenDay.name === day);
+  if (!filteredByDay) {
+    return [];
+  }
+  return filteredByDay.interviewers.map(aptID => state.interviewers[aptID]);
+}
