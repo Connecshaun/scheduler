@@ -20,9 +20,28 @@ export default function Application(props) {
   const setDay = day => setState({ ...state, day });
 
 
-  function bookInterview(id, interview) {
+  const bookInterview = function (id, interview) {
     console.log(id, interview);
-  }
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+      };
+
+    return Axios.put(`/api/appointments/${id}`, { interview })
+    .then((res) => {
+      setState({
+        ...state,
+        appointments
+     })
+    })
+  };
+
+
 
   useEffect(() => {
   Promise.all([
