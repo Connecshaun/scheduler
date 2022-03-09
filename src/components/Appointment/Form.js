@@ -6,10 +6,6 @@ import Button from "components/Button";
 
 export default function Form (props) {
 
-  console.log("PROPS:", props)
-
-  console.log("FORMprops.interviewers:", props.interviewers)
-
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
