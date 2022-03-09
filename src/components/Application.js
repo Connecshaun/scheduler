@@ -41,6 +41,26 @@ export default function Application(props) {
     })
   };
 
+  const cancelInterview = function (id) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+      };
+
+      const appointments = {
+        ...state.appointments,
+        [id]: appointment
+      };
+  
+      return Axios.delete(`/api/appointments/${id}`)
+        .then((res) => {
+          setState({
+            ...state,
+            appointments
+          })
+        })
+    }
+
 
 
   useEffect(() => {
@@ -70,7 +90,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         { dailyAppointments.map(appointment => {const interview = getInterview(state, appointment.interview);
-            return (<Appointment key={ appointment.id} {...appointment} id={ appointment.id } time={ appointment.time } interview={ interview } interviewers={ dailyInterviewers } bookInterview={ bookInterview }
+            return (<Appointment key={ appointment.id} {...appointment} id={ appointment.id } time={ appointment.time } interview={ interview } interviewers={ dailyInterviewers } bookInterview={ bookInterview } cancelInterview={ cancelInterview }
             />); 
             }) 
             }

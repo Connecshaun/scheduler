@@ -6,6 +6,10 @@ import Button from "components/Button";
 
 export default function Form (props) {
 
+  console.log("PROPS:", props)
+
+  console.log("FORMprops.interviewers:", props.interviewers)
+
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
@@ -19,6 +23,7 @@ export default function Form (props) {
     props.onCancel();
   };
 
+  
   return (
     <main className="appointment__card appointment__card--create">
   <section className="appointment__card-left">

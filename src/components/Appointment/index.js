@@ -16,17 +16,20 @@ export default function Appointment (props) {
   const CREATE = "CREATE";
   const SAVING = "SAVING";
   
-  const save = function (name, interviewer) {
+  const save = function (name, interviewer_id) {
     const interview = {
       student: name,
-      interviewer
+      interviewer: interviewer_id,
     };
     transition(SAVING);
+
     props.bookInterview(props.id, interview)
-    .then(res => transition(SHOW));
+    .then(() => transition(SHOW));
   }
 
   const { mode, transition, back } = useVisualMode(props.interview ? SHOW : EMPTY);
+
+  console.log("FORMprops.interviewers:", props.interviewers)
 
   return (
     <article className="appointment">
