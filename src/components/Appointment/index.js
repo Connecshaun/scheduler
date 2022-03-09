@@ -4,7 +4,7 @@ import Header from "components/Appointment/Header";
 import Empty from "components/Appointment/Empty";
 import Show from "components/Appointment/Show";
 import Status from "components/Appointment/Status";
-import useVisualMode from "../../hooks/useVisualMode";
+import useVisualMode from "hooks/useVisualMode";
 import Form from "components/Appointment/Form";
 import Confirm from "components/Appointment/Confirm";
 import Error from "components/Appointment/Error"
