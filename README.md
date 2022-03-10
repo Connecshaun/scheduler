@@ -2,7 +2,7 @@
 
 Interview Scheduler is an application that allows students to create, edit and delete interview appointments.
 
-![The app](/public/Wednesday.png)
+![The app](/public/readMeImages/Wednesday.png)
 
 ## Getting Started
 
