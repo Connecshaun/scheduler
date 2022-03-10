@@ -13,11 +13,10 @@ export default function useApplicationData() {
 
   const setDay = day => setState({ ...state, day });
 
+  
 
   const getSpotsCount = (dayObj, appointments) => {
-    console.log('dayObj', dayObj)
-    console.log('.days', state.days)
-    console.log('.appointments', state.appointments)
+    console.log(dayObj)
     let count = 0;
     for (const id of dayObj.appointments) {
       const appointment = appointments[id];
@@ -27,8 +26,8 @@ export default function useApplicationData() {
     }
     return count;
   }
+
   
-  //state.day, state.days, appointments
   const updateSpots = (dayName, days, appointments) => {
     const day = days.find((item) => item.name === dayName);
     const unbooked = getSpotsCount(day, appointments);

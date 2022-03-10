@@ -1,23 +1,15 @@
-# Interview Scheduler
+# Interview Scheduler :technologist:
 
-## Setup
+Interview Scheduler is an application that allows students to create, edit and delete interview appointments.
 
-Install dependencies with `npm install`.
+![The app](/public/Wednesday.png)
 
-## Running Webpack Development Server
+## Getting Started
 
-```sh
-npm start
-```
+1. Install dependencies using the npm install command.
+2. Start the web server using "npm start". The app will be served at http://localhost:8080/.
+3. Go to http://localhost:8080/ in your browser.
 
-## Running Jest Test Framework
+## Dependencies
 
-```sh
-npm test
-```
-
-## Running Storybook Visual Testbed
-
-```sh
-npm run storybook
-```
+axios • classnames • normalize.css • react • react-dom • react-scripts
