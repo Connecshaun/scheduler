@@ -48,25 +48,25 @@ export default function Appointment (props) {
 
   return (
     <article className="appointment">
-    <Header time={ props.time} />
+      <Header time={ props.time} />
 
-    { mode === EMPTY && (<Empty onAdd={() => transition(CREATE)} />)}
+      { mode === EMPTY && (<Empty onAdd={() => transition(CREATE)} />)}
 
-    { mode === SHOW && (<Show student={ props.interview.student } interviewer={ props.interview.interviewer } onDelete={ confirmDeleteInterview } onEdit={() => transition(EDIT)} />)}
+      { mode === SHOW && (<Show student={ props.interview.student } interviewer={ props.interview.interviewer } onDelete={ confirmDeleteInterview } onEdit={() => transition(EDIT)} />)}
 
-    { mode === CREATE && (<Form interviewers={[props.interviewers]} onCancel={() => back()} onSave={ save } />)}
+      { mode === CREATE && (<Form interviewers={[props.interviewers]} onCancel={() => back()} onSave={ save } />)}
 
-    { mode === SAVING && (<Status message={ "SAVING" } />)}
+      { mode === SAVING && (<Status message={ "SAVING" } />)}
 
-    { mode === EDIT && (<Form interviewers={ [props.interviewers] } interviewer={ props.interview.interviewer } student={ props.interview.student } onCancel={() => back()} onSave={ save } />)}
+      { mode === EDIT && (<Form interviewers={ [props.interviewers] } interviewer={ props.interview.interviewer } student={ props.interview.student } onCancel={() => back()} onSave={ save } />)}
 
-    { mode === DELETING && (<Status message={ "Delete this appointment?" } />)}
+      { mode === DELETING && (<Status message={ "Delete this appointment?" } />)}
 
-    { mode === CONFIRM && (<Confirm onCancel={() => back()} onConfirm={ deleteInterview } />)}
+      { mode === CONFIRM && (<Confirm onCancel={() => back()} onConfirm={ deleteInterview } />)}
 
-    { mode === ERROR_DELETE && (<Error message={ "Could not delete appointment" } onClose={back} />)}
+      { mode === ERROR_DELETE && (<Error message={ "Could not delete appointment" } onClose={back} />)}
 
-    { mode === ERROR_SAVE && (<Error message={"Could not save"} onClose={back} />)}
+      { mode === ERROR_SAVE && (<Error message={"Could not save"} onClose={back} />)}
     </article>
   )
 }

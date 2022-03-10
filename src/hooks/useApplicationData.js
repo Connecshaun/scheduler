@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
+//hook responsible for loading data from the api.., also provides actions to update state causing component to render
 export default function useApplicationData() {
   const [state, setState] = useState({
     day: "Monday",
