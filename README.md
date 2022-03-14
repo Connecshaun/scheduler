@@ -32,7 +32,7 @@ If we had greasy fingers from our :pizza: and accidentally clicked on the trash 
 
 ## Getting Started
 
-1. Follow the readMe documentation to successfully hook into the api at https://github.com/lighthouse-labs/scheduler-api
+1. Follow the ReadMe.md file instructions to successfully connect to the api at https://github.com/lighthouse-labs/scheduler-api
 2. Install dependencies using the "npm install" command.
 3. Start the web server using "npm start". The app will be served at http://localhost:8000/.
 4. Go to http://localhost:8000/ in your browser.
