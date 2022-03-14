@@ -58,7 +58,7 @@ export default function Appointment (props) {
 
       { mode === SAVING && (<Status message={ "SAVING" } />)}
 
-      { mode === EDIT && (<Form interviewers={ [props.interviewers] } interviewer={ props.interview.interviewer } student={ props.interview.student } onCancel={() => back()} onSave={ save } />)}
+      { mode === EDIT && (<Form interviewers={ [props.interviewers] } interviewer={ props.interview.interviewer.id } student={ props.interview.student } onCancel={() => back()} onSave={ save } />)}
 
       { mode === DELETING && (<Status message={ "Delete this appointment?" } />)}
 
