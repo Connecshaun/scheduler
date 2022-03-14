@@ -1,6 +1,6 @@
 # Interview Scheduler :technologist:
 
-Interview Scheduler is an application that allows students to create, edit and delete interview appointments.
+Interview Scheduler is an application that allows students to create, edit and delete interview appointments. The app is currently hooked into an external api to persist our data to a database.
 
 ![The app](/public/readMeImages/Wednesday.png)
 To book a new appointment start by clicking on the "plus" button in an empty time-slot.
@@ -32,9 +32,10 @@ If we had greasy fingers from our :pizza: and accidentally clicked on the trash 
 
 ## Getting Started
 
-1. Install dependencies using the "npm install" command.
-2. Start the web server using "npm start". The app will be served at http://localhost:8000/.
-3. Go to http://localhost:8000/ in your browser.
+1. Follow the readMe documentation to successfully hook into the api at https://github.com/lighthouse-labs/scheduler-api
+2. Install dependencies using the "npm install" command.
+3. Start the web server using "npm start". The app will be served at http://localhost:8000/.
+4. Go to http://localhost:8000/ in your browser.
 
 ## Dependencies
 
