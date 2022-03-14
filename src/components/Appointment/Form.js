@@ -9,14 +9,30 @@ export default function Form (props) {
 
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
+  const [error, setError] = useState("");
+
   const reset = () => {
     setStudent("");
-    setInterviewer("");
+    setInterviewer(null);
   };
 
   const cancel = () => {
     reset();
     props.onCancel();
+  };
+
+  const validationCheck = () => {
+    if (student === "") {
+      setError("Please add a student name");
+      return;
+    }
+    if (!interviewer) {
+      setError("Please select an interviewer");
+      return;
+    }
+
+    setError("");
+    props.onSave(student, interviewer);
   };
 
   
@@ -26,12 +42,13 @@ export default function Form (props) {
         <form autoComplete="off" onSubmit={event => event.preventDefault()}>
           <input placeholder="Student Name" className="appointment__create-input text--semi-bold" name="name" type="text" value={ student } onChange={(event) => setStudent(event.target.value)} />
         </form>
+        <section className="appointment__validation">{error}</section>
         <InterviewerList interviewers={ props.interviewers } value= { interviewer } onChange={ setInterviewer} />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={ cancel }>Cancel</Button>
-          <Button confirm onClick={ event => props.onSave(student, interviewer) }>Save</Button>
+          <Button confirm onClick={ validationCheck }>Save</Button>
         </section>
       </section>
     </main>
