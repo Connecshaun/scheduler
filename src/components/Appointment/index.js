@@ -54,11 +54,11 @@ export default function Appointment (props) {
 
       { mode === SHOW && (<Show student={ props.interview.student } interviewer={ props.interview.interviewer } onDelete={ confirmDeleteInterview } onEdit={() => transition(EDIT)} />)}
 
-      { mode === CREATE && (<Form interviewers={[props.interviewers]} onCancel={() => back()} onSave={ save } />)}
+      { mode === CREATE && (<Form interviewers={ props.interviewers } onCancel={() => back()} onSave={ save } />)}
 
       { mode === SAVING && (<Status message={ "SAVING" } />)}
 
-      { mode === EDIT && (<Form interviewers={ [props.interviewers] } interviewer={ props.interview.interviewer.id } student={ props.interview.student } onCancel={() => back()} onSave={ save } />)}
+      { mode === EDIT && (<Form interviewers={ props.interviewers } interviewer={ props.interview.interviewer.id } student={ props.interview.student } onCancel={() => back()} onSave={ save } />)}
 
       { mode === DELETING && (<Status message={ "Deleting" } />)}
 
