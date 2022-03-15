@@ -72,13 +72,13 @@ storiesOf("Button", module)
       backgrounds: [{ name: "dark", value: "#222f3e", default: true }],
     })
     .add("Monday", () => (
-      <DayList days={days} value={"Monday"} onChange={action("setDay")} />
+      <DayList days={days} day={"Monday"} setDay={action("setDay")} />
     ))
     .add("Tuesday", () => (
-      <DayList days={days} value={"Tuesday"} onChange={action("setDay")} />
+      <DayList days={days} day={"Tuesday"} setDay={action("setDay")} />
     ))
     .add("Wednesday", () => (
-        <DayList days={days} value={"Wednesday"} onChange={action("setDay")} />
+        <DayList days={days} day={"Wednesday"} setDay={action("setDay")} />
     ));
 
 
@@ -164,7 +164,7 @@ storiesOf("Button", module)
 
          .add("Empty", () => <Empty onAdd={action("onAdd")} />)
 
-         .add("Show", () => <Show student="Lydia Miller-Jones" interviewer={interviewer.name} onEdit={action("onEdit")} onDelete={action("onDelete")} />)
+         .add("Show", () => <Show student="Shaun Robinson" interviewer={interviewer.name} onEdit={action("onEdit")} onDelete={action("onDelete")} />)
 
          .add("Confirm", () => <Confirm message="Delete the appointment?" onConfirm={action("onConfirm")} onCancel={action("onCancel")} />)
 
@@ -190,7 +190,7 @@ storiesOf("Button", module)
               <Appointment
                 id={1}
                 time="4pm"
-                interview={{ student: "Lydia Miller-Jones", interviewer }}
+                interview={{ student: "Shaun Robinson", interviewer }}
               />
               <Appointment time="5pm" />
             </Fragment>
